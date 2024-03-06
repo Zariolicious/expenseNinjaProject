@@ -12,8 +12,11 @@ count = 0
 selected_rowid = 0 
 
 
+
 ws = Tk()
 ws.title('Expense Tracker')
 
+#font 
+f = ('Times new roman', 14,)
 
 ws.mainloop()
