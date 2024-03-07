@@ -18,5 +18,8 @@ ws.title('Expense Tracker')
 
 #font 
 f = ('Times new roman', 14,)
+namevar = StringVar()
+amtvar = IntVar()
+dopvar = StringVar()
 
 ws.mainloop()
