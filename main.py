@@ -13,7 +13,7 @@ selected_rowid = 0
 
 def submit_balance():
     global desired_balance #declate as global to use it later
-    desired_balance = float(balance_entry.get())
+    desired_balance = balance_entry.get()
     try:
         desired_balance = float(desired_balance) #converts input to float
         messagebox.showinfo("Success", f"Desired balance set to: {desired_balance}")
@@ -80,7 +80,8 @@ def totalBalance():
     for i in f: 
         for j in i:
             if j is not None:
-                remaining_balance = 5000 - j
+                total_expense = j
+                remaining_balance = desired_balance - total_expense
                 messagebox.showinfo('Current Balance: ', f"Total Expense: ' {j} \nBalance Remaining: {remaining_balance}") 
             else: 
                 messagebox.showinfo('Current Balance: ', f"Total Expense: 0 \nDesired Balance: {desired_balance}")
