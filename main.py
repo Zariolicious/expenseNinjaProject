@@ -118,7 +118,7 @@ balance_entry.grid(row=0, column=1)
 
 
 #font 
-f = ('Times new roman', 14,)
+f = ('Comic Sans MS', 14,)
 namevar = StringVar()
 amtvar = IntVar()
 dopvar = StringVar()
