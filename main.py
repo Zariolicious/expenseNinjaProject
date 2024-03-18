@@ -84,7 +84,7 @@ def totalBalance():
             if j is not None:
                 total_expense = j
                 remaining_balance = desired_balance - total_expense
-                messagebox.showinfo('Current Balance: ', f"Total Expense: ' {j} \nBalance Remaining: {remaining_balance}") 
+                messagebox.showinfo('Current Balance: ', f"Total Expense: {j} \nBalance Remaining: {remaining_balance}") 
             else: 
                 messagebox.showinfo('Current Balance: ', f"Total Expense: 0 \nDesired Balance: {desired_balance}")
 
