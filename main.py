@@ -114,7 +114,7 @@ prompt_frame.pack()
 balance_label = ctk.CTkLabel(
     prompt_frame, 
     text="Enter your desired balance: ",
-    fg_color=('blue', 'red'),
+    fg_color=('#89CFF0', 'red'),
     corner_radius = 10, 
     )
 balance_label.grid(row=0, column=0, sticky=W)
