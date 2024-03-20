@@ -3,8 +3,6 @@ from tkinter import ttk
 import datetime as dt #dates need to be extracted from computer
 from mydb import * 
 from tkinter import messagebox
-import customtkinter as ctk 
-
 
 #object for database 
 data = Database(db='myexpense.db') #db is parameter from db class (name must have db extention) 
@@ -103,40 +101,35 @@ def deleteRow():
 ws = Tk()
 ws.title('Expense Ninja')
 
-prompt_window = ctk.CTk()
+prompt_window = Toplevel(ws)
 prompt_window.title('Balance Setting')
-prompt_window.geometry('400x400')
 
-
-prompt_frame = ctk.CTkFrame(prompt_window)
+prompt_frame = Frame(
+    prompt_window, 
+    padx=10, 
+    pady=10)
 prompt_frame.pack()
 
-balance_label = ctk.CTkLabel(
-    prompt_frame, 
-    text="Enter your desired balance: ",
-    fg_color=('#89CFF0', 'red'),
-    corner_radius = 10, 
-    )
+balance_label = Label(prompt_frame, text="Enter your desired balance: ")
 balance_label.grid(row=0, column=0, sticky=W)
 
-
-balance_entry = ctk.CTkEntry(prompt_frame)
+balance_entry = Entry(prompt_frame)
 balance_entry.grid(row=0, column=1)
 
 
 #font 
-f = ('Comic Sans MS', 14,)
+f = ('Times new roman', 14,)
 namevar = StringVar()
 amtvar = IntVar()
 dopvar = StringVar()
 
 #Button to submit balance
 
-prompt_submit_btn = ctk.CTkButton(
+submit_button = Button(
     prompt_frame, 
     text ="Submit",
     font=f,
-    bg_color = '#1F51FF', 
+    bg = '#1F51FF', 
     command=submit_balance,
     width=15
 )
@@ -270,8 +263,7 @@ quit_btn.grid(row=2, column=2, sticky=EW, padx=(10, 0))
 total_bal.grid(row=0, column=3, sticky=EW, padx=(10, 0))
 update_btn.grid(row=1, column=3, sticky=EW, padx=(10, 0))
 del_btn.grid(row=2, column=3, sticky=EW, padx=(10, 0))
-prompt_submit_btn.grid(row=1, columnspan=2, pady=10) #pf frame
+submit_button.grid(row=1, column=0, columnspan=2, pady=10) #pf frame
 
 
-prompt_window.mainloop()
 ws.mainloop()
